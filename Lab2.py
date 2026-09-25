@@ -33,30 +33,26 @@ while login not in users or users[login]["password"] != password:
     login = input("Введіть логін: ")
     password = input("Введіть пароль: ")
 
-    grades = users[login]["grades"]
+grades = users[login]["grades"]
 
-    print("\nВхід успішний!")
-    print("Ваші оцінки:")
+print("\nВхід успішний!")
+print("Ваші оцінки:")
 
-    # Get grades
-    for grade in grades:
-        print(grade, end=" ")
+# Get grades
+for grade in grades:
+    print(grade, end=" ")
 
+# Grade counters
+satisfactory = 0
+unsatisfactory = 0
 
-    # Grade counters
-    satisfactory = 0
-    unsatisfactory = 0
+# Count satisfactory and unsaticfactory grades
+for grade in grades:
+    if 5 <= grade <= 12:
+        satisfactory += 1
+    elif 1 <= grade <= 4:
+        unsatisfactory += 1
 
-
-    # Count satisfactory and unsaticfactory grades
-    for grade in grades:
-        if 5 <= grade <= 12:
-            satisfactory += 1
-        elif 1 <= grade <= 4:
-            unsatisfactory += 1
-
-
-    # Result
-    print("\n\nКількість задовільних оцінок:", satisfactory)
-    print("Кількість незадовільних оцінок:", unsatisfactory)
-
+# Result
+print("\n\nКількість задовільних оцінок:", satisfactory)
+print("Кількість незадовільних оцінок:", unsatisfactory)
